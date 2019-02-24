@@ -34,4 +34,5 @@ with open('goldpricehistoric.csv', 'wb') as csvfile:
     filewriter = csv.writer(csvfile, delimiter=',')
     for x in range(len(gold_year)):
     	filewriter.writerow([gold_year[x], gold_price[x]])
-		
+
+print("Hello")		
