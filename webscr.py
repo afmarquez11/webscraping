@@ -22,17 +22,15 @@ gold_year = []
 gold_price = []
 
 for result in prices:
+	print(result)
 	data = result.find_all('td')
-	year = re.search(r'[12]\d{3}', str(data))
-	value = re.search(r'\$\d+(?:.(\d+))?', str(data))
-	if year is not None: #Found a year
-		gold_year.append(year.group())
-	if value is not None: #Found a value
-		gold_price.append(value.group())
+	gold_year.append(re.findall(r'[12]\d{3}', str(data)))
+	#gold_price.append(re.findall(r'\$\d+(?:.(\d+))?', str(data)))
 
-with open('goldpricehistoric.csv', 'wb') as csvfile:
+	#Error on gold prices. Check the regex
+
+with open('goldpricehistoric2.csv', 'wb') as csvfile:
     filewriter = csv.writer(csvfile, delimiter=',')
     for x in range(len(gold_year)):
-    	filewriter.writerow([gold_year[x], gold_price[x]])
+    	filewriter.writerow([gold_year[x]])#, gold_price[x]])
 
-print("Hello")		
