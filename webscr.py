@@ -27,8 +27,9 @@ for result in prices:
 	gold_year.append(re.findall(r'[12]\d{3}', str(data)))
 	#gold_price.append(re.findall(r'\$\d+(?:.(\d+))?', str(data)))
 
-	#Error on gold prices. Check the regex
+	#Error on gold prices. findall works differently. Check how it works within this function
 
+#To add the data, there's a problem adding one per row when there's more than one result. Check this.
 with open('goldpricehistoric2.csv', 'wb') as csvfile:
     filewriter = csv.writer(csvfile, delimiter=',')
     for x in range(len(gold_year)):
