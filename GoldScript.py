@@ -1,3 +1,6 @@
+#Date Modified: March 06, 2019
+#Created by: Abel F. Márquez
+
 #Libraries
 from bs4 import BeautifulSoup
 import csv
